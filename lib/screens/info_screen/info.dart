@@ -29,7 +29,17 @@ void makeList(){}*/
 ToggleButtons*/
 
 class informationSeller extends StatefulWidget {
-  const informationSeller({Key? key}) : super(key: key);
+  informationSeller({Key? key, required this.coding_checked, required this.sido, required this.gugun, required this.field}) : super(key: key);
+  List<String> coding_checked;
+  String sido;
+  String gugun;
+  String field;
+
+  // 앞에서 C, C++ 을 선택했을 경우 -> coding_checked = [ 'C', 'C++' ] \
+  // (배열형태) -> .where('tech', arrayContainsAny : widget.coding_checked ) 로 하면 될듯
+  // sido = '서울특별시' , gugun = '성동구' 를 기본으로 선택해주세요
+  //field는 따로 안써도 될듯
+
 
   @override
   State<informationSeller> createState() => _informationSellerState();
